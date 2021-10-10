@@ -250,7 +250,14 @@ body {
         margin-top: 10px;
         display: flex;
         justify-content: center;
+    }
+}
 
+.minmax {
+    margin: auto;
+    width: 50px;   
+    &__min, &__max {
+        margin-top: 5px;
     }
 }
 

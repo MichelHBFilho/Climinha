@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" class="favicon" href="favicon.ico" type="image/x-icon">
 </head>
-<body class="noite">
+<body>
     <header class="header">
         <div class="header__header">
-            <h1 class="header__titulo noite">Climinha em Porto Alegre</h1>
-            <img src="assets/img/lua.png" alt="Lua" class="header__logo">
+            <h1 class="header__titulo">Climinha em Porto Alegre</h1>
+            <img src="assets/img/lua.png" class="header__logo">
         </div>
         <div class="header__div">
-            <input type="text" placeholder="Insira aqui a cidade" class="header__input-cidade noite">
+            <input type="text" placeholder="Insira aqui a cidade" class="header__input-cidade">
             <button class="header__enviar-cidade">Enviar</button>
         </div>
     </header>
@@ -29,6 +29,10 @@
                 <span class="celcius active">C°</span>
                 <span class="fah">F°</span>
             </div>
+        </div>
+        <div class="minmax">
+            <p class="minmax__min">Min:<span class="min__temp"> °</span></p>
+            <p class="minmax__max">Max:<span class="max__temp"> °</span></p>
         </div>
         <p class="main__horas"></p>
         <div class="main__popup">

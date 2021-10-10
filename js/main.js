@@ -1,5 +1,7 @@
 let linkAtual = `https://api.openweathermap.org/data/2.5/weather?q=${"Porto Alegre"}&appid=d60042ab475173beb863502b1da035ab`;
 let temperatura;
+let minima;
+let maxima;
 
 $(".header__enviar-cidade").click(atualizaCidade);
 
@@ -19,18 +21,31 @@ $(".fah").on("click", atualizaTemperaturaToFah);
 
 function atualizaTemperaturaToFah() {
     if($(".fah").hasClass("active")) return;
+    
+    temperatura = converteCelciusToFah(temperatura);
+    minima = converteCelciusToFah(minima);
+    maxima = converteCelciusToFah(maxima);
 
     $(".celcius").removeClass("active");
     $(".fah").addClass("active");
-    $(".main__graus").text(converteCelciusToFah(temperatura) + "°");
+    $(".main__graus").text(temperatura + "°");
+
+    $(".min__temp").text(minima + "°");
+    $(".max__temp").text(maxima + "°");
 } 
 
 function atualizaTemperaturaToCelcius() {
     if($(".celcius").hasClass("active")) return;
 
+    temperatura = converteFahToCelcius(temperatura);
+    minima = converteFahToCelcius(minima);
+    maxima = converteFahToCelcius(maxima);
+
     $(".fah").removeClass("active");
     $(".celcius").addClass("active");
-    $(".main__graus").text(converteFahToCelcius(temperatura) + "°");
+    $(".main__graus").text(temperatura + "°");
+    $(".min__temp").text(minima + "°");
+    $(".max__temp").text(maxima + "°");
 }
 
 function atualizaCidade() {
@@ -51,6 +66,10 @@ function atualizaDados(link) {
         escolherImagem(data.weather[0].main);
         $(".fah").removeClass("active");
         $(".celcius").addClass("active");
+        minima = Math.round(converteKToCelcius(data.main.temp_min));
+        maxima = Math.round(converteKToCelcius(data.main.temp_max));
+        $(".min__temp").text(minima + "°");
+        $(".max__temp").text(maxima + "°");
     }).fail((erro)=> {
         $(".main__erro").text("Erro " + erro.status);
         $(".main__popup").slideDown();
@@ -89,12 +108,10 @@ function converteKToCelcius(temp) {
 
 function converteCelciusToFah(temp) {
     const conta = Math.round((temp * 1.8 + 32));
-    temperatura = conta;    
     return conta;
 }
 
 function converteFahToCelcius(temp) {
     const conta = Math.round(((temp - 32) * (5/9)));
-    temperatura = conta
     return conta;
 }

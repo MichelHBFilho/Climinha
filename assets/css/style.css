@@ -213,6 +213,14 @@ body.noite {
   cursor: pointer;
 }
 
+.minmax {
+  margin: auto;
+  width: 50px;
+}
+.minmax__min, .minmax__max {
+  margin-top: 5px;
+}
+
 @keyframes girar {
   100% {
     -webkit-transform: rotate(360deg);
