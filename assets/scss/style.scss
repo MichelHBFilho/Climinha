@@ -86,14 +86,12 @@ body {
     &__titulo {
         font-size: 3em;
         font-weight: 900;
-        height: 110px;
         width: 800px;
         display: inline-block;
         text-align: center;
         @include for-phone() {
             font-size: 2.3em;
             text-align: center;
-            height: 90px;
         }
 
         &.dia {
