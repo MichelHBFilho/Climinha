@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climinha</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" class="favicon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="noite">
+    <header class="header">
+        <div class="header__header">
+            <h1 class="header__titulo noite">Climinha em Porto Alegre</h1>
+            <img src="assets/img/lua.png" alt="Lua" class="header__logo">
+        </div>
+        <div class="header__div">
+            <input type="text" placeholder="Insira aqui a cidade" class="header__input-cidade noite">
+            <button class="header__enviar-cidade">Enviar</button>
+        </div>
+    </header>
+    <main class="main">
+        <h2 class="main__clima-info"></h2>
+        <img src="#" class="main__img">
+        <div class="main__temp temp">
+            <p class="main__graus">°</p>
+            <div class="temp__btnstemp">
+                <span class="celcius active">C°</span>
+                <span class="fah">F°</span>
+            </div>
+        </div>
+        <p class="main__horas"></p>
+        <div class="main__popup">
+            <span class="main__erro">Erro</span>
+            <span class="main__popup__seta"></span>
+        </div>
+        <button class="main__reload"><img src="assets/img/reload.svg" alt="Recarregar" class="main__reload__img"></button>
+    </main>
+
+    <script src="js/jquery.js"></script>
+    <script type="module" src="js/animacao.js"></script>
+    <script src="js/defineDiaNoite.js"></script>
+    <script src="js/atualizaHorario.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

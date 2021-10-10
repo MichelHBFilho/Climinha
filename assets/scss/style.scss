@@ -1,0 +1,264 @@
+$cor1: #2E4057;
+$cor2: #ECD444;
+$cor3: #63D2FF;
+$cor4: #E0E0E0;
+$cor5: #333333;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@mixin for-phone() {
+    @media (max-width: 700px) {@content;}
+}
+
+@mixin for-desktop() {
+    @media (min-width: 700px) {@content;}
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    &.dia {
+        background-color: $cor4;
+        color: $cor5;
+    }
+    &.noite {
+        background-color: $cor5;
+        color: $cor4;
+    }
+}
+
+.header {
+    height: max-content;
+    @include for-desktop() {
+        width: 65%;
+        margin: auto;
+    }
+    padding: 20px;
+    
+    &__header {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__div {
+        position: relative;
+        width: 300px;
+        margin: auto;
+    }
+
+    &__input-cidade {
+        width: 80%;
+        margin-top: 5px;
+        margin: auto;
+        display: block;
+        text-align: center;
+        border-radius: 5px;
+        outline: transparent;
+
+        &.noite {
+            background-color: $cor4;
+        }
+
+        &.dia {
+            border: $cor5 solid 2px;
+            border-left: transparent;
+        }
+    }
+
+    &__enviar-cidade {
+        position: absolute;
+        top: 2px;
+        right: 20px;
+        border: transparent;
+        border-radius: 0 5px 5px 0;
+        background-color: #fff;
+        transition-duration: 0.5s;
+
+        &:hover {
+            background-color: $cor2;
+            cursor: pointer;
+        }
+    }
+
+    &__titulo {
+        font-size: 3em;
+        font-weight: 900;
+        height: 70px;
+        width: 800px;
+        display: inline-block;
+        text-align: center;
+        @include for-phone() {
+            font-size: 2.3em;
+            text-align: center;
+            height: 90px;
+        }
+
+        &.dia {
+            background-image: linear-gradient(to right, $cor2, $cor3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        &.noite {
+            background-image: linear-gradient(to right, $cor1, $cor3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__logo {
+
+        @include for-desktop() {
+            width: 8%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        @include for-phone() {
+            width: 30%;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        
+    }
+
+    &__popup {
+        position: relative;
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #ff6347;
+        padding: 5px;
+        text-align: center;
+        border-radius: 5px;
+        display: none;
+
+        &__seta {
+            &::after {
+                content: '';
+                display: block;
+                background-color: #ff6347;
+                width: 15px;
+                height: 10px;
+                position: absolute;
+                bottom: -7px;
+                left: 40%;
+                border-radius: 0 0 100% 100%;
+            }
+        }
+    }
+}
+
+.main {
+    width: 30%;
+    @include for-phone() {
+        width: 90%;
+    }
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+
+    &__img {
+        width: 60%;
+        margin: auto;
+        display: block;
+
+        @include for-phone() {
+            width: 30%;
+        }
+    }
+
+    &__clima-info {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    &__horas {
+        text-align: center;
+        padding: 10px;
+        font-size: 1.3em;
+    }
+
+    &__graus {
+        text-align: center;
+        padding: 5.2px;
+        font-size: 1.5em;
+    }
+
+    &__reload {
+        background-color: transparent;
+        border: transparent;
+        margin: auto;
+        display: block;
+
+        &:hover {
+            cursor: pointer;
+        }
+        
+        .girando {
+            animation: 1s girar;
+        }
+
+    }
+
+    &__popup {
+        position: relative;
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #ff6347;
+        padding: 5px;
+        text-align: center;
+        border-radius: 5px;
+        display: none;
+
+        &__seta {
+            &::after {
+                content: '';
+                display: block;
+                background-color: #ff6347;
+                width: 15px;
+                height: 10px;
+                position: absolute;
+                bottom: -7px;
+                left: 40%;
+                border-radius: 0 0 100% 100%;
+            }
+        }
+    }
+    
+    .temp{
+        .celcius, .fah {
+            display: block;
+            &.active {
+                color: $cor2;
+                font-weight: 700;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+@keyframes girar {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

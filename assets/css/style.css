@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body.dia {
+  background-color: #E0E0E0;
+  color: #333333;
+}
+body.noite {
+  background-color: #333333;
+  color: #E0E0E0;
+}
+
+.header {
+  height: max-content;
+  padding: 20px;
+}
+@media (min-width: 700px) {
+  .header {
+    width: 65%;
+    margin: auto;
+  }
+}
+.header__header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.header__div {
+  position: relative;
+  width: 300px;
+  margin: auto;
+}
+.header__input-cidade {
+  width: 80%;
+  margin-top: 5px;
+  margin: auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  outline: transparent;
+}
+.header__input-cidade.noite {
+  background-color: #E0E0E0;
+}
+.header__input-cidade.dia {
+  border: #333333 solid 2px;
+  border-left: transparent;
+}
+.header__enviar-cidade {
+  position: absolute;
+  top: 2px;
+  right: 20px;
+  border: transparent;
+  border-radius: 0 5px 5px 0;
+  background-color: #fff;
+  transition-duration: 0.5s;
+}
+.header__enviar-cidade:hover {
+  background-color: #ECD444;
+  cursor: pointer;
+}
+.header__titulo {
+  font-size: 3em;
+  font-weight: 900;
+  height: 70px;
+  width: 800px;
+  display: inline-block;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .header__titulo {
+    font-size: 2.3em;
+    text-align: center;
+    height: 90px;
+  }
+}
+.header__titulo.dia {
+  background-image: linear-gradient(to right, #ECD444, #63D2FF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.header__titulo.noite {
+  background-image: linear-gradient(to right, #2E4057, #63D2FF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@media (min-width: 700px) {
+  .header__logo {
+    width: 8%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+@media (max-width: 700px) {
+  .header__logo {
+    width: 30%;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+  }
+}
+.header__popup {
+  position: relative;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ff6347;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+}
+.header__popup__seta::after {
+  content: "";
+  display: block;
+  background-color: #ff6347;
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  bottom: -7px;
+  left: 40%;
+  border-radius: 0 0 100% 100%;
+}
+
+.main {
+  width: 30%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+@media (max-width: 700px) {
+  .main {
+    width: 90%;
+  }
+}
+.main__img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+@media (max-width: 700px) {
+  .main__img {
+    width: 30%;
+  }
+}
+.main__clima-info {
+  font-size: 2em;
+  text-align: center;
+}
+.main__horas {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.3em;
+}
+.main__graus {
+  text-align: center;
+  padding: 5.2px;
+  font-size: 1.5em;
+}
+.main__reload {
+  background-color: transparent;
+  border: transparent;
+  margin: auto;
+  display: block;
+}
+.main__reload:hover {
+  cursor: pointer;
+}
+.main__reload .girando {
+  animation: 1s girar;
+}
+.main__popup {
+  position: relative;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ff6347;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+}
+.main__popup__seta::after {
+  content: "";
+  display: block;
+  background-color: #ff6347;
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  bottom: -7px;
+  left: 40%;
+  border-radius: 0 0 100% 100%;
+}
+.main .temp {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.main .temp .celcius, .main .temp .fah {
+  display: block;
+}
+.main .temp .celcius.active, .main .temp .fah.active {
+  color: #ECD444;
+  font-weight: 700;
+}
+.main .temp .celcius:hover, .main .temp .fah:hover {
+  cursor: pointer;
+}
+
+@keyframes girar {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
